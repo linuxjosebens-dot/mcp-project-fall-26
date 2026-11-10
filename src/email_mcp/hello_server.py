@@ -22,7 +22,12 @@ def count_letter(text: str, letter: str) -> int:
     #         message; the tests check it.
     # Hint 2: ignore case by lowercasing both `text` and `letter`.
     # Hint 3: Python strings have a .count() method.
-    raise NotImplementedError("TODO 1: fill in count_letter in hello_server.py")
+    if len(letter) != 1:
+        raise ToolError("letter must be exactly one character.")
+    else:
+        text = text.lower()
+        letter = letter.lower()
+        return text.count(letter)
 
 
 if __name__ == "__main__":
